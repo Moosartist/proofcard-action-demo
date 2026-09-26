@@ -15,4 +15,4 @@ jobs:
         with:
           node-version: 22
       - run: echo "tiny-shop has no dependencies"
-      - uses: Moosartist/proofcard@fix/action-pr-and-review-attestation
+      - uses: Moosartist/proofcard@v0.1.1
