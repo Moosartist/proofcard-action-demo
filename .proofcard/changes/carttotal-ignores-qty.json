@@ -1,0 +1,12 @@
+{
+  "title": "cartTotal ignores qty",
+  "type": "bugfix",
+  "risk": "medium",
+  "problem": "cartTotal([{priceCents:250,qty:4}]) returns 250, expected 1000. Likely cause: the reduce in src/cart.js adds priceCents without multiplying by qty.",
+  "facts": ["src/cart.js:6 reduce sums item.priceCents only"],
+  "assumptions": ["items without qty should count as 1 (existing tests pass qty:1)"],
+  "must_not_change": ["cartTotal(items, discountPercent) signature", "discount rounding"],
+  "scope": ["src/cart.js", "test/**"],
+  "later": [],
+  "regression": { "command": "node --test test/qty.test.js", "files": ["test/qty.test.js"] }
+}
