@@ -1,0 +1,4 @@
+{
+  "base": "main",
+  "checks": [{ "name": "test", "run": "npm test" }]
+}
